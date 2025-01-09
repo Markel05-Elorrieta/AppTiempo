@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -11,7 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import model.Provincias;
-import model.sql.SQL;
 
 public class MenuaView extends JFrame {
 

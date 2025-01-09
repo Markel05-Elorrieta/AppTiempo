@@ -53,5 +53,10 @@ public class MunicipiosEspaciosNatId implements java.io.Serializable {
 		result = 37 * result + this.getIdMunicipio();
 		return result;
 	}
+	
+	@Override
+	public String toString() {
+		return "MunicipiosEspaciosNatId [idEspacio=" + idEspacio + ", idMunicipio=" + idMunicipio + "]";
+	}
 
 }

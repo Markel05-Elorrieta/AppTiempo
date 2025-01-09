@@ -6,8 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.JButton;
-
 import model.Municipios;
 import model.Provincias;
 import model.sql.SQL;
@@ -15,14 +13,14 @@ import view.MenuaView;
 
 public class ContMenu {
 	private SQL sql = new SQL();
-	
+
 	public void start() {
 		List<Provincias> provincias = sql.importProvincias();
 		MenuaView menua = new MenuaView(provincias);
 		menua.setVisible(true);
 		setListeners(menua);
 	}
-	
+
 	private void setListeners(MenuaView menu) {
 		menu.getBtnIncluir().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -47,16 +45,17 @@ public class ContMenu {
 				menu.añadirProvincia(provincia);
 			}
 		});
-		
+
 		menu.getBtnSeleccionar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Provincias provincia = (Provincias) menu.getComboBoxProvincias().getSelectedItem();
-			    sql.getMunicipiosFromProvincia(provincia);
-			    
+				ContMunicipios contMunicipios = new ContMunicipios(provincia);
+				contMunicipios.start();
+				menu.dispose();
 			}
 		});
-
 	}
+
 	private static final String[] PROVINCIAS = { "Navarra", "Madrid", "Barcelona", "Valencia", "Sevilla" };
 	private static final String[] MUNICIPIOS = { "Pamplona", "Madrid", "Barcelona", "Valencia", "Sevilla" };
 
@@ -77,5 +76,3 @@ public class ContMenu {
 		return MUNICIPIOS[index];
 	}
 }
-
-

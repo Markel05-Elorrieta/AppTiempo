@@ -105,5 +105,10 @@ public class CentrosMeteorologicos implements java.io.Serializable {
 	public void setMedicionesCentroMets(Set medicionesCentroMets) {
 		this.medicionesCentroMets = medicionesCentroMets;
 	}
+	
+	@Override
+	public String toString() {
+		return nombre;
+	}
 
 }

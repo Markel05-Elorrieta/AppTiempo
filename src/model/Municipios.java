@@ -86,4 +86,8 @@ public class Municipios implements java.io.Serializable {
 		this.centrosMeteorologicoses = centrosMeteorologicoses;
 	}
 
+	@Override
+	public String toString() {
+		return nombre;
+	}
 }

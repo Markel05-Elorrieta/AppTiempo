@@ -95,5 +95,10 @@ public class EspaciosNaturales implements java.io.Serializable {
 	public void setMunicipiosEspaciosNats(Set municipiosEspaciosNats) {
 		this.municipiosEspaciosNats = municipiosEspaciosNats;
 	}
+	
+	@Override
+	public String toString() {
+		return nombre;
+	}
 
 }
